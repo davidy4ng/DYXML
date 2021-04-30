@@ -3,5 +3,6 @@ import XCTest
 import DYXMLTests
 
 var tests = [XCTestCaseEntry]()
-tests += DYXMLTests.allTests()
+tests += XMLTests.allTests()
+tests += XMLBuilderTests.allTests()
 XCTMain(tests)
