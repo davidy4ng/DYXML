@@ -37,7 +37,7 @@ With DYXML you can write it this way:
 ```swift
 import DYXML
 
-let xml = document(indentation: .initialDefault) {
+let xml = document {
     node("gpx", attributes: [
         ("xmlns", "http://www.topografix.com/GPX/1/1"),
         ("creator", "byHand"),
