@@ -1,5 +1,5 @@
 @resultBuilder
-struct XMLBuilder {
+public struct XMLBuilder {
     typealias Expression = XML
     typealias Component = [XML]
 
