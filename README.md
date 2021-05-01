@@ -48,7 +48,7 @@ let xml = document {
         }
     }
 }
-print(xml.toString())
+print(xml.string)
 ```
 
 ## License
