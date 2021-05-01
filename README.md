@@ -46,10 +46,10 @@ let xml = document(indentation: .initialDefault) {
         ("xsi:schemaLocation", "http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd")
     ]) {
             node("wpt", attributes: [("lat", "39.921055008"), ("lon", "3.054223107")]) {
-            node("ele", value: "12.863281")
-            node("time", value: "2005-05-16T11:49:06Z")
-            node("name", value: "Cala Sant Vicenç - Mallorca")
-            node("sym", value: "City")
+                node("ele", value: "12.863281")
+                node("time", value: "2005-05-16T11:49:06Z")
+                node("name", value: "Cala Sant Vicenç - Mallorca")
+                node("sym", value: "City")
         }
     }
 }
