@@ -32,14 +32,14 @@ struct XMLBuilder {
     }
 }
 
-func document(indentation: XMLIndentation? = .initialDefault, @XMLBuilder children: () -> [XML]) -> XML {
-    return XMLDocument(indentation: indentation, children: children())
+public func document(@XMLBuilder children: () -> [XML]) -> XML {
+    return XMLDocument(children: children())
 }
 
-func node(_ name: String, attributes: [XMLAttribute] = [], @XMLBuilder children: () -> [XML]) -> XMLNode {
+public func node(_ name: String, attributes: [XMLAttribute] = [], @XMLBuilder children: () -> [XML]) -> XML {
     return XMLNode(name: name, attributes: attributes, children: children())
 }
 
-func node(_ name: String, attributes: [XMLAttribute] = [], value: XML) -> XMLNode {
+public func node(_ name: String, attributes: [XMLAttribute] = [], value: XML) -> XML {
     return XMLNode(name: name, attributes: attributes, children: [value])
 }

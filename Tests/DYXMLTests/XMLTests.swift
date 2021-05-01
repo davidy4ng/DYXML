@@ -49,19 +49,19 @@ final class XMLTests: XCTestCase {
 
     func testRenderXMLDocumentWithRoot() {
         let someTag = XMLNode(name: "type", children: ["9"])
-        let document = XMLDocument(indentation: .none, children: [someTag])
+        let document = XMLDocument(children: [someTag])
         XCTAssertEqual(document.string, "<?xml version=\"1.0\" encoding=\"UTF-8\"?><type>9</type>")
     }
 
     func testRenderXMLDocumentWithoutRoot() {
         let someTag1 = XMLNode(name: "type", children: ["9"])
         let someTag2 = XMLNode(name: "value", children: ["10"])
-        let document = XMLDocument(indentation: .none, children: [someTag1, someTag2])
+        let document = XMLDocument(children: [someTag1, someTag2])
         XCTAssertEqual(document.string, "<?xml version=\"1.0\" encoding=\"UTF-8\"?><type>9</type><value>10</value>")
     }
 
     func testRenderXMLDocumentWithoutIndentation() {
-        let document = XMLDocument(indentation: .none, children: [
+        let document = XMLDocument(children: [
             XMLNode(name: "root", children: [
                 XMLNode(name: "type", children: ["9"]),
                 XMLNode(name: "content", children: [
@@ -92,7 +92,7 @@ final class XMLTests: XCTestCase {
 
             """
 
-        XCTAssertEqual(document.string, expectedResult)
+        XCTAssertEqual(document.toString(withIndentation: 2), expectedResult)
     }
 
     static var allTests = [

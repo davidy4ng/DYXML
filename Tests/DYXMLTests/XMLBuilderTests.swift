@@ -3,7 +3,7 @@ import XCTest
 
 final class XMLBuilderTests: XCTestCase {
     func testXMLBuilderSimple() {
-        let document = document(indentation: .none) {
+        let document = document {
             node("html") {
                 node("p") {
                     "Test"
@@ -14,7 +14,7 @@ final class XMLBuilderTests: XCTestCase {
     }
 
     func testXMLBuilderWithChildren() {
-        let document = document(indentation: .none) {
+        let document = document {
             node("html") {
                 node("p", attributes: [("style", "font-weight: 'bold'")]) {
                     "Hello, "
@@ -73,7 +73,7 @@ final class XMLBuilderTests: XCTestCase {
     }
 
     func testXMLBuilderReadmeExample() {
-        let xml = document(indentation: .initialDefault) {
+        let xml = document {
             node("gpx", attributes: [
                 ("xmlns", "http://www.topografix.com/GPX/1/1"),
                 ("creator", "byHand"),
@@ -102,7 +102,7 @@ final class XMLBuilderTests: XCTestCase {
             </gpx>
 
             """
-        XCTAssertEqual(xml.string, expectedResult)
+        XCTAssertEqual(xml.toString(withIndentation: 2), expectedResult)
     }
 
     static var allTests = [

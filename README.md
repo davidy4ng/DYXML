@@ -53,7 +53,16 @@ let xml = document(indentation: .initialDefault) {
         }
     }
 }
-print(xml.string)
+```
+
+You can then get your XML string content with one of the following method:
+
+```swift
+// Output without any indentation and on a single line
+let output = xml.string
+
+// Output with multiple lines and indentation of 2 spaces by level
+let indentedOutput = xml.toString(withIndentation: 2)
 ```
 
 ## Installation
