@@ -4,11 +4,16 @@ XML document builder in Swift made with `@resultBuilder`.
 
 ## Description
 
-This is a simple and lightweight XML document builder. It is built upon the Swift Result Builders, introduced in Swift 5.4.
+This is a simple and lightweight XML document builder. It is built upon the Swift Result Builders, introduced in Swift 5.4. Heavily inspired by SwiftUI.
+
+## Requirements
+
+- Swift 5.4 (available from Xcode 12.5)
 
 ## Features
 
 - **Write XML** string
+- Supports `if`, `if...else`, `switch`, `for...in` statements
 - Unit tests are available
 
 ## Usage
@@ -49,6 +54,16 @@ let xml = document(indentation: .initialDefault) {
     }
 }
 print(xml.string)
+```
+
+## Installation
+
+### Swift Package Manager
+
+```swift
+dependencies: [
+    .package(url: "https://github.com/davidy4ng/DYXML.git", .upToNextMajor(from: "1.0.0"))
+]
 ```
 
 ## License
