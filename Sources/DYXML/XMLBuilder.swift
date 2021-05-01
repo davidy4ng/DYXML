@@ -39,3 +39,7 @@ func document(indentation: XMLIndentation? = .initialDefault, @XMLBuilder childr
 func node(_ name: String, attributes: [XMLAttribute] = [], @XMLBuilder children: () -> [XML]) -> XMLNode {
     return XMLNode(name: name, attributes: attributes, children: children())
 }
+
+func node(_ name: String, attributes: [XMLAttribute] = [], value: XML) -> XMLNode {
+    return XMLNode(name: name, attributes: attributes, children: [value])
+}

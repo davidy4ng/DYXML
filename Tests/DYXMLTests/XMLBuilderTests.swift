@@ -33,7 +33,7 @@ final class XMLBuilderTests: XCTestCase {
     func testXMLBuilderWithOptional() {
         let root = node("root") {
             if true {
-                node("value") { "true" }
+                node("value", value: "true")
             }
         }
         XCTAssertEqual(root.string, "<root><value>true</value></root>")
@@ -42,22 +42,22 @@ final class XMLBuilderTests: XCTestCase {
     func testXMLBuilderWithEither() {
         let root = node("root") {
             if true {
-                node("value1") { "true" }
+                node("value1", value: "true")
             } else {
-                node("value1") { "false" }
+                node("value1", value: "false")
             }
 
             if false {
-                node("value2") { "true" }
+                node("value2", value: "true")
             } else {
-                node("value2") { "false" }
+                node("value2", value: "false")
             }
 
             switch (true, false) {
             case (_, false):
-                node("value3") { "ok" }
+                node("value3", value: "ok")
             default:
-                node("value3") { "nok" }
+                node("value3", value: "nok")
             }
         }
         XCTAssertEqual(root.string, "<root><value1>true</value1><value2>false</value2><value3>ok</value3></root>")
@@ -82,10 +82,10 @@ final class XMLBuilderTests: XCTestCase {
                 ("xsi:schemaLocation", "http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd")
             ]) {
                 node("wpt", attributes: [("lat", "39.921055008"), ("lon", "3.054223107")]) {
-                    node("ele") { "12.863281" }
-                    node("time") { "2005-05-16T11:49:06Z" }
-                    node("name") { "Cala Sant Vicenç - Mallorca" }
-                    node("sym") { "City" }
+                    node("ele", value: "12.863281")
+                    node("time", value: "2005-05-16T11:49:06Z")
+                    node("name", value: "Cala Sant Vicenç - Mallorca")
+                    node("sym", value: "City")
                 }
             }
         }
